@@ -1,0 +1,35 @@
+{
+  "id": "aria-with-you",
+  "name": {
+    "key": "plugin.ariaWithYou.name",
+    "fallback": "Aria with You"
+  },
+  "version": "1.1.0",
+  "author": "Aria Project",
+  "description": {
+    "key": "plugin.ariaWithYou.description",
+    "fallback": "按真实日期切换春夏秋冬的 Aria 形象，为启动器的各区域换季；四季各有不同的穿搭、动作与道具。Switches Aria's artwork and palette between spring, summer, autumn and winter by date; each season has its own outfit, pose and prop."
+  },
+  "glyph": "palette",
+  "accent": "#E39BD4",
+  "hooks": ["theme", "background", "sidebar"],
+  "permissions": ["theme", "uiSlot", "storage"],
+  "enabledByDefault": false,
+  "requiresRestart": false,
+  "status": {
+    "key": "plugin.ariaWithYou.status",
+    "fallback": "需要启动器 0.1.0 及以上版本内的 Aria 渲染器。本包提供立绘与清单；季节判断、配色与摆放由启动器实现。"
+  },
+  "statusTone": "info",
+  "homepage": "https://github.com/Hgit-1/mfmcl-aria-with-you",
+
+  "artwork": {
+    "note": "Described here for humans and for future loader versions. The 0.1.0 launcher ignores unknown manifest fields and reads its own bundled copy of this artwork from /plugins/aria-with-you/, so installing this package does not by itself change what the launcher draws.",
+    "seasons": ["spring", "summer", "autumn", "winter"],
+    "hero": "assets/aria-{season}-hero.webp",
+    "portrait": "assets/aria-{season}-portrait.webp",
+    "thumb": "assets/aria-{season}-portrait-thumb.webp",
+    "pages": "assets/pages/aria-{page}-{season}.webp",
+    "pageNames": ["library", "store", "downloads", "plugins", "instance-detail"]
+  }
+}

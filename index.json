@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "name": "MFMCL Aria with You",
+  "plugins": [
+    {
+      "id": "aria-with-you",
+      "name": "Aria with You",
+      "description": "按真实日期切换春夏秋冬的 Aria 形象，为启动器的各区域换季；四季各有不同的穿搭、动作与道具。Switches Aria's artwork and palette between spring, summer, autumn and winter by date; each season has its own outfit, pose and prop.",
+      "author": "Aria Project",
+      "version": "1.1.0",
+      "download": "https://github.com/Hgit-1/mfmcl-aria-with-you/releases/download/v1.1.0/aria-with-you-1.1.0.mflp",
+      "homepage": "https://github.com/Hgit-1/mfmcl-aria-with-you",
+      "sha256": "6ac93273e8029ed40aa1c95c2f4e26dfd73222ece31eca0cda1dea1c66df13e7",
+      "permissions": [
+        "theme",
+        "uiSlot",
+        "storage"
+      ],
+      "hooks": [
+        "theme",
+        "background",
+        "sidebar"
+      ],
+      "minLauncherVersion": "0.1.0"
+    }
+  ]
+}
