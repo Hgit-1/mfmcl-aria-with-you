@@ -72,16 +72,21 @@ python tools/package.py --check    # 校验 index.json 里的 sha256 与重新�
 
 ## 重新生成素材
 
-`tools/gen.py` 调用图像生成接口重出全部素材，`tools/audit.py` 复核，`tools/seg.py` 抠像。
+`tools/gen.py` 调用图像生成接口重出全部素材，`tools/audit.py` 复核，`tools/seg.py` 抠像。三者都在本仓库里，用本仓库的 `assets/` 作为输出与输入。
 
 ```sh
-export MFMCL_ARIA_IMAGE_KEY=...     # 图像接口的 key，不写进仓库
+export MFMCL_ARIA_IMAGE_KEY=...                                   # 图像接口的 key，不写进仓库
+export MFMCL_ARIA_OUT_DIR="$PWD/assets"                           # 输出与复核的目标目录
 python tools/gen.py                 # 四季 × 全身/半身
 python tools/gen.py pages           # 五页动作 × 四季
 python tools/audit.py               # 复核发色、发夹、边缘晕边，并生成浅/深背景对照表
 ```
 
+`MFMCL_ARIA_OUT_DIR` 是必填的：脚本刻意不猜路径。它们原本住在启动器仓库里，按相对位置找同级目录；一旦两个仓库的摆放方式变了（克隆到别的盘、放进子目录），猜错的结果是往一个新建的空目录里写 36 张图，比直接报错更难发现。
+
 `gen.py` 内置校验：发夹缺失、方向反了、或退化成单个方块时会自动重新生成。`audit.py` 要求的阈值都标了来源，没有凭空选取的数字。
+
+改完素材后记得升 `manifest.json` 的 `version` 并重新打包——启动器按 tag 锁定素材（`utils/aria.ts` 的 `ART_PIN`），不升版本的话用户看到的还是旧图。
 
 ## 许可
 
